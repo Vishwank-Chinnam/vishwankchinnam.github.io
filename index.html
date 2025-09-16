@@ -29,7 +29,7 @@
   <p>Welcome to my personal website hosted on GitHub Pages!</p>
   <p>IDK What to put here!</p>
   <p>So this exists!</p>
-<style>
+  <style>
   #videoContainer {
     position: relative;
     width: 640px;
@@ -37,16 +37,14 @@
     cursor: pointer;
     margin: auto;
   }
-
   #myVideo {
     width: 100%;
     height: 100%;
     display: block;
   }
-
   #muteButton {
     position: absolute;
-    bottom: 15px;
+    bottom: 35px;
     right: 15px;
     background: rgba(0,0,0,0.5);
     border: none;
@@ -60,9 +58,18 @@
     justify-content: center;
     cursor: pointer;
   }
-
   #muteButton:hover {
     background: rgba(0,0,0,0.7);
+  }
+  #muteText {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 4px;
   }
 </style>
 <div id="videoContainer">
@@ -71,21 +78,29 @@
     Your browser does not support the video tag.
   </video>
   <button id="muteButton">🔇</button>
+  <div id="muteText">Click to unmute</div>
 </div>
 <script>
   const video = document.getElementById("myVideo");
   const muteButton = document.getElementById("muteButton");
+  const muteText = document.getElementById("muteText");
+  function updateMuteUI() {
+    muteButton.textContent = video.muted ? "🔇" : "🔊";
+    muteText.textContent = video.muted ? "Click to unmute" : "Click to mute";
+  }
   // Toggle mute/unmute on button click
   muteButton.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent toggling by video container
+    e.stopPropagation();
     video.muted = !video.muted;
-    muteButton.textContent = video.muted ? "🔇" : "🔊";
+    updateMuteUI();
   });
-  // Optional: also toggle on video click
+  // Toggle mute/unmute on video click
   video.addEventListener("click", () => {
     video.muted = !video.muted;
-    muteButton.textContent = video.muted ? "🔇" : "🔊";
+    updateMuteUI();
   });
+  // Initialize text
+  updateMuteUI();
 </script>
 </body>
 </html>
