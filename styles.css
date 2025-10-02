@@ -1,1 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+}
+
+footer {
+    background: #000000;
+    color: #ffffff;
+}
+
+.divider-white {
+    height: 2px;
+    background: #ffffff;
+    width: 100%;
+}
+
+.divider-grey {
+    height: 1px;
+    background: #4a4a4a;
+    width: 100%;
+}
+
+.copyright-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    padding: 30px 60px;
+    text-align: center;
+}
+
+.copyright-text {
+    color: #b0b0b0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.copyright-text p {
+    margin: 5px 0;
+}
+
+.powered-section {
+    background: #000000;
+    padding: 20px 60px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.powered-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.powered-item.top-left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+}
+
+.powered-item.top-right {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.powered-item.bottom-left {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+}
+
+.powered-item.bottom-right {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+}
+
+.powered-label {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.powered-item a {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.powered-item a:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.powered-item img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.credits-disclaimer {
+    background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
+    padding: 25px 60px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+
+.credits-disclaimer p {
+    color: #888888;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .powered-section {
+        grid-template-columns: 1fr;
+        padding: 20px 30px;
+        gap: 12px;
+    }
+
+    .powered-item.top-right,
+    .powered-item.bottom-right {
+        justify-self: start;
+    }
+
+    .copyright-section,
+    .credits-disclaimer {
+        padding: 25px 30px;
+    }
+
+    .powered-item img {
+        height: 24px;
+    }
+
+    .powered-label {
+        font-size: 11px;
+    }
+}
