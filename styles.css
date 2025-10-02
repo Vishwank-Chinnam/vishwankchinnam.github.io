@@ -91,6 +91,9 @@ footer {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     white-space: nowrap;
+    display: inline-block;
+    min-width: 95px;
+    text-align: left;
 }
 
 .powered-item a {
@@ -148,5 +151,6 @@ footer {
 
     .powered-label {
         font-size: 11px;
+        min-width: 85px;
     }
 }
